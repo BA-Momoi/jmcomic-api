@@ -77,7 +77,92 @@ def decode_search_value(value: str) -> str:
 @app.get("/")
 def read_root():
     return """
-it works!
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JMComic API - Vercel Flask</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .status {
+            color: #4caf50;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .info {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .api-list {
+            text-align: left;
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .api-list h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .api-item {
+            margin: 10px 0;
+            padding: 8px;
+            background: white;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 JMComic API</h1>
+        <div class="status">✓ It works!</div>
+        <div class="info">
+            欢迎使用 JMComic API 服务！<br>
+            基于 Flask 框架，部署在 Vercel 平台上。
+        </div>
+        <div class="api-list">
+            <h3>📚 可用端点：</h3>
+            <div class="api-item">GET /album/&lt;comic_id&gt;</div>
+            <div class="api-item">GET /album/&lt;comic_id&gt;/cover</div>
+            <div class="api-item">GET /photo/&lt;comic_id&gt;/chapter/&lt;chapter&gt;</div>
+            <div class="api-item">GET /search/&lt;keyword&gt;</div>
+            <div class="api-item">GET /search/&lt;keyword&gt;/&lt;page&gt;</div>
+        </div>
+    </div>
+    
+    <!-- Vercel Speed Insights -->
+    <script>
+        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+</body>
+</html>
     """
 
 
